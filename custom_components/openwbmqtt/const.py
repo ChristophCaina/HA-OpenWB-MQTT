@@ -340,6 +340,20 @@ SENSORS_PER_LP = [
         entity_registry_enabled_default=False,
     ),
     openwbSensorEntityDescription(
+        key="SocFaultState",
+        name="Soc-Fehlerstatus",
+        device_class=None,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        entity_registry_enabled_default=False,
+    ),
+    openwbSensorEntityDescription(
+        key="SocFaultStr",
+        name="Soc-Fehlertext",
+        device_class=None,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        entity_registry_enabled_default=False,
+    ),
+    openwbSensorEntityDescription(
         key="AConfigured",
         name="Ladestromvorgabe",
         device_class=SensorDeviceClass.CURRENT,
