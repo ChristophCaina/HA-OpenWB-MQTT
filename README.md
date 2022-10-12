@@ -1,6 +1,6 @@
-This project has been forked from: https://github.com/a529987659852/openwbmqtt  
-if you want to use this component, you need to uninstall the original one first.  
 # openwbmqtt
+
+THIS is an fork based on the work of https://github.com/a529987659852/openwbmqtt! 
 
 Note: I provide this custom integration without any warranty. It lies in the responsability of each user to validate the functionality with his/her own openWB!
 
