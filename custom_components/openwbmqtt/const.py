@@ -416,13 +416,13 @@ SENSORS_PER_LP = [
         device_class=None,
         native_unit_of_measurement=None,
     ),
-    openwbSensorEntityDescription(
-        key="TimeRemaining",
-        name="Voraus. Ladeende",
-        device_class=SensorDeviceClass.TIMESTAMP,
-        native_unit_of_measurement=None,
-        icon="mdi:alarm",
-    ),
+    #openwbSensorEntityDescription(
+    #    key="TimeRemaining",
+    #    name="Voraus. Ladeende",
+    #    device_class=SensorDeviceClass.TIMESTAMP,
+    #    native_unit_of_measurement=None,
+    #    icon="mdi:alarm",
+    #),
     openwbSensorEntityDescription(
         key="strChargePointName",
         name="Ladepunktsbezeichnung",
