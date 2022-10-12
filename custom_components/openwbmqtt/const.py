@@ -123,9 +123,11 @@ SENSORS_GLOBAL = [
     ),
     openwbSensorEntityDescription(
         key="system/lastRfId",
-        name="letzter RFID-Tag",
+        name="zuletzt gescannter RFID-Tag",
         device_class=None,
         native_unit_of_measurement=None,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        entity_registry_enabled_default=False,
         icon="mdi:Tag-multiple-outline",
     ),
     openwbSensorEntityDescription(
@@ -359,6 +361,15 @@ SENSORS_PER_LP = [
         key="SocFaultState",
         name="Soc-Fehlerstatus",
         device_class=None,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        entity_registry_enabled_default=False,
+    ),
+    openwbSensorEntityDescription(
+        key="lastRfId",
+        name="zuletzt gescannter RFID-Tag",
+        device_class=None,
+        native_unit_of_measurement=None,
+        icon="mdi:Tag-multiple-outline",
         entity_category=EntityCategory.DIAGNOSTIC,
         entity_registry_enabled_default=False,
     ),
