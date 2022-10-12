@@ -212,7 +212,7 @@ SENSORS_GLOBAL = [
         icon="mdi:battery-charging-50",
     ),
     openwbSensorEntityDescription(
-        key="oglobal/DailyYieldAllChargePointsKwh",
+        key="global/DailyYieldAllChargePointsKwh",
         name="Tagesverbrauch aller Ladepunkte",
         device_class=SensorDeviceClass.ENERGY,
         native_unit_of_measurement=ENERGY_KILO_WATT_HOUR,
