@@ -134,18 +134,18 @@ class openwbSensor(OpenWBBaseEntity, SensorEntity):
                     self._attr_native_value = self._attr_native_value
 
             # Reformat TimeRemaining --> timestamp.
-            if "TimeRemaining" in self.entity_description.key:
-                now = dt.utcnow()
-                if "H" in self._attr_native_value:
-                    tmp = self._attr_native_value.split()
-                    delta = timedelta(hours=int(tmp[0]), minutes=int(tmp[2]))
-                    self._attr_native_value = now + delta
-                elif "Min" in self._attr_native_value:
-                    tmp = self._attr_native_value.split()
-                    delta = timedelta(minutes=int(tmp[0]))
-                    self._attr_native_value = now + delta
-                else:
-                    self._attr_native_value = None
+            #if "TimeRemaining" in self.entity_description.key:
+            #    now = dt.utcnow()
+            #    if "H" in self._attr_native_value:
+            #        tmp = self._attr_native_value.split()
+            #        delta = timedelta(hours=int(tmp[0]), minutes=int(tmp[2]))
+            #        self._attr_native_value = now + delta
+            #    elif "Min" in self._attr_native_value:
+            #        tmp = self._attr_native_value.split()
+            #        delta = timedelta(minutes=int(tmp[0]))
+            #        self._attr_native_value = now + delta
+            #    else:
+            #        self._attr_native_value = None
 
             # Reformat uptime sensor
             if "uptime" in self.entity_id:
