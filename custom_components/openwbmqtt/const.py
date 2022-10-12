@@ -128,7 +128,7 @@ SENSORS_GLOBAL = [
         native_unit_of_measurement=None,
         entity_category=EntityCategory.DIAGNOSTIC,
         entity_registry_enabled_default=False,
-        icon="mdi:Tag-multiple-outline",
+        icon="mdi:tag-multiple-outline",
     ),
     openwbSensorEntityDescription(
         key="global/cpuModel",
@@ -378,7 +378,7 @@ SENSORS_PER_LP = [
         name="zuletzt gescannter RFID-Tag",
         device_class=None,
         native_unit_of_measurement=None,
-        icon="mdi:Tag-multiple-outline",
+        icon="mdi:tag-multiple",
         entity_category=EntityCategory.DIAGNOSTIC,
         entity_registry_enabled_default=False,
     ),
