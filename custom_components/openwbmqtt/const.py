@@ -202,6 +202,22 @@ SENSORS_GLOBAL = [
         icon="mdi:home-lightning-bolt-outline",
     ),
     openwbSensorEntityDescription(
+        key="global/WAllChargePoints",
+        name="Ladeleistung aller Ladepunkte",
+        device_class=SensorDeviceClass.POWER,
+        native_unit_of_measurement=POWER_WATT,
+        state_class=SensorStateClass.MEASUREMENT,
+        icon="mdi:battery-charging-50",
+    ),
+    openwbSensorEntityDescription(
+        key="oglobal/DailyYieldAllChargePointsKwh",
+        name="Tagesverbrauch aller Ladepunkte",
+        device_class=SensorDeviceClass.ENERGY,
+        native_unit_of_measurement=ENERGY_KILO_WATT_HOUR,
+        state_class=SensorStateClass.TOTAL_INCREASING,
+        icon="mdi:counter",
+    ),
+    openwbSensorEntityDescription(
         key="pv/W",
         name="PV-Leistung",
         device_class=SensorDeviceClass.POWER,
