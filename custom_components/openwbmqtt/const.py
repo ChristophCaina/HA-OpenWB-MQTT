@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Callable
+from collections.abc import Callable
 
 import voluptuous as vol
 
@@ -17,7 +17,7 @@ from homeassistant.components.sensor import (
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.components.switch import DEVICE_CLASS_SWITCH, SwitchEntityDescription
+from homeassistant.components.switch import SwitchDeviceClass, SwitchEntityDescription
 from homeassistant.const import (
     ELECTRIC_CURRENT_AMPERE,
     ELECTRIC_POTENTIAL_VOLT,
@@ -641,6 +641,26 @@ SELECTS_GLOBAL = [
             "Standby",
         ],
     ),
+    
+    openwbSelectEntityDescription(
+        key="config/get/pv/priorityModeEVBattery",
+        entity_category=EntityCategory.CONFIG,
+        name="Vorrang im Lademodus PV-Laden",
+        valueMapCurrentValue={
+            0: "Speicher",
+            1: "Fahrzeug",
+        },
+        valueMapCommand={
+            "Speicher": 0,
+            "Fahrzeug": 1,
+        },
+        mqttTopicCommand="config/set/pv/priorityModeEVBattery",
+        mqttTopicCurrentValue="config/get/pv/priorityModeEVBattery",
+        modes=[
+            "Speicher",
+            "Fahrzeug",
+        ],
+    ),
 ]
 
 SELECTS_PER_LP = [
@@ -675,7 +695,7 @@ SWITCHES_PER_LP = [
         name="Ladepunkt aktiv",
         mqttTopicCommand="ChargePointEnabled",
         mqttTopicCurrentValue="ChargePointEnabled",
-        device_class=DEVICE_CLASS_SWITCH,
+        device_class=SwitchDeviceClass.SWITCH,
     ),
 ]
 
