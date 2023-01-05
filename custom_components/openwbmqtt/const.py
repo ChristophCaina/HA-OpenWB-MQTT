@@ -19,8 +19,8 @@ from homeassistant.components.sensor import (
 )
 from homeassistant.components.switch import SwitchDeviceClass, SwitchEntityDescription
 from homeassistant.const import (
-    ELECTRIC_CURRENT_AMPERE,
-    ELECTRIC_POTENTIAL_VOLT,
+    UnitOfElectricPotential,
+    UnitOfElectricCurrent,
     PERCENTAGE,
     Platform,
     UnitOfEnergy,
