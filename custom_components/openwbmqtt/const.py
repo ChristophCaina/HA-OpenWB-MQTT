@@ -88,6 +88,7 @@ class openwbSwitchEntityDescription(SwitchEntityDescription):
 
     mqttTopicCommand: str | None = None
     mqttTopicCurrentValue: str | None = None
+    mqttTopicChargeMode: str | None = None
 
 @dataclass
 class openWBNumberEntityDescription(NumberEntityDescription):
