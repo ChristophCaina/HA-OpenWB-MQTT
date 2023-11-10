@@ -904,4 +904,18 @@ NUMBERS_PER_LP = [
         mqttTopicChargeMode=None,
         entity_registry_enabled_default=False,
     ),
+    openWBNumberEntityDescription(
+        key="MaxPriceForCharging",
+        name="max. Preis zum Laden",
+        native_unit_of_measurement=CURRENCY,
+        device_class=SensorDeviceClass.MONETARY,
+        icon="mdi:currency-eur",
+        native_min_value=0.0,
+        native_max_value=100.0,
+        native_step=1,
+        entity_category=EntityCategory.CONFIG,
+        mqttTopicCommand="MaxPriceForCharging",
+        mqttTopicCurrentValue="MaxPriceForCharging",
+        mqttTopicChargeMode=None,
+        entity_registry_enabled_default=False,
 ]
