@@ -28,6 +28,7 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfTemperature,
     UnitOfInformation,
+    CURRENCY_EUR,
 )
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity import EntityCategory
@@ -372,6 +373,17 @@ SENSORS_GLOBAL = [
         entity_registry_enabled_default=False,
         icon="mdi:battery-charging-low",
     ),
+    #aWattar
+    openwbSensorEntityDescription(
+        key="global/awattar/ActualPriceForCharging",
+        name="Aktueller Strompreis (aWattar)",
+        device_class=SensorDeviceClass.MONETARY,
+        native_unit_of_measurement=CURRENCY_EURO,
+        state_class=SensorStateClass.MEASUREMENT,
+        entity_registry_enabled_default=False,
+        value_fn=lambda x: round(float(x) / 100.0, 4),
+        icon="mdi:currency-eur",
+    ),
 ]
 
 SENSORS_PER_LP = [
@@ -556,6 +568,22 @@ SENSORS_PER_LP = [
         name="Stromstärke (Phase 3)",
         device_class=SensorDeviceClass.CURRENT,
         native_unit_of_measurement=UnitOfElectricCurrent.AMPERE,
+    ),
+    openwbSensorEntityDescription(
+        key="plugStartkWh",
+        name="Zähler-Start",
+        device_class=SensorDeviceClass.ENERGY,
+        native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
+        state_class=SensorStateClass.TOTAL_INCREASING,
+        icon="mdi:counter",
+        value_fn=lambda x: round(float(x), 2),
+    ),
+    openwbSensorEntityDescription(
+        key="MeterSerialNumber",
+        name="Zähler-Seriennummer",
+        device_class=None,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        entity_registry_enabled_default=False,
     ),
 ]
 
